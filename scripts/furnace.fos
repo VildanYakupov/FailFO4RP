@@ -381,3 +381,33 @@ uint e_FurnaceBurn( uint[]@ values )
 	}
 	return 0;
 }
+
+// ----------------Меню для печи------------------
+bool ShowMenuFurnace ( Critter& cr, Item&target )
+{
+	Map@ map = cr.GetMap();
+	if( !valid( map ))
+	{
+		return false;
+	}
+
+	cr.ShowScreen( SCREEN_DIALOGBOX, 4, "" );
+	cr.Say( SAY_DIALOGBOX_TEXT, "Что ты будешь делать с печью" );
+	cr.Say( SAY_DIALOGBOX_BUTTON( 0 ), "Разжечь печь" );
+	cr.Say( SAY_DIALOGBOX_BUTTON( 1 ), "Подложить топлива" );
+	cr.Say( SAY_DIALOGBOX_BUTTON( 2 ), "Подложить материал" );
+	cr.Say( SAY_DIALOGBOX_BUTTON( 3 ), "Выйти" );
+
+	return true;
+}
+
+void AnswerFurnace( Critter& cr, uint answerI, string& answerS )
+{
+	if(!)
+	{
+		return false;
+	}
+}
+
+
+}
